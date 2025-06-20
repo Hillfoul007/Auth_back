@@ -92,10 +92,18 @@ app.get("/api/test", (req, res) => {
 });
 
 // API Routes
+console.log("🔗 Mounting routes...");
+console.log("Auth routes:", typeof authRoutes);
+console.log("Booking routes:", typeof bookingRoutes);
+console.log("Rider routes:", typeof riderRoutes);
+console.log("Location routes:", typeof locationRoutes);
+
 app.use("/api/auth", authRoutes);
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/riders", riderRoutes);
 app.use("/api/location", locationRoutes);
+
+console.log("✅ Routes mounted successfully");
 
 // Root endpoint
 app.get("/", (req, res) => {
